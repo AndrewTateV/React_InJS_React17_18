@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script> -->
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>reactttt</title>
+  </head>
+  <body>
+    <div id="root">
+
+
+
+
+
+
+    </div>
+    <script type = 'text/babel'>
+      // html css js
+// const rootElement =document.getElementById('root')
+// const element =document.createElement('div')
+// element.textContent='hello'
+// rootElement.appendChild(element)
+
+
+// react 17
+// const rootElement =document.getElementById('root')
+// const element = React.createElement('div',{
+// children :'hello',
+// className : 'container',
+// id : 'newElement'
+// })
+// ReactDOM.render(element,rootElement)
+
+
+
+// react 18
+const rootElement =document.getElementById('root')
+const rootReactDom = ReactDOM.createRoot(rootElement)
+
+// const element = React.createElement('div',{
+// children :'hello',
+// className : 'container',
+// id : 'newElement'
+// })
+
+
+// babel转化
+const element2 = <div className="container" id="newElement">hello babel</div>
+
+
+// 多个root
+const element3 =
+ <div>
+  <div>1</div>
+  <div>2</div>
+  </div>
+  // 可以加key
+  const element4 =
+ <React.Fragment key="6">
+  <div>1</div>
+  <div>2</div>
+  </React.Fragment>
+// 简写 不能加key
+const element5 =
+ <>
+  <div>1</div>
+  <div>2</div>
+  {element2}
+  </>
+
+
+
+
+  const style = {
+  display: 'flex',
+  flexDirection: 'column',
+  backgroundColor: 'red'
+ 
+}
+
+const element6 =
+  <div style={style}>
+    <div>1</div>
+    <div>2</div>
+  
+    {element2}
+  </div>
+
+
+
+
+
+rootReactDom.render(element6)
+
+
+
+
+
+
+
+
+
+    </script>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
